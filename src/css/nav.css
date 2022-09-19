@@ -1,0 +1,101 @@
+/* nav */
+.nav_link_ul {
+  margin-left: 24rem;
+  margin-top: -55px;
+}
+.mobile_menu {
+  float: right;
+  font-size: 25px;
+}
+.mobile_menu_bg {
+  background-color: #252121;
+}
+.logo {
+  width: 5rem;
+  margin-left: 1rem;
+}
+.nav_link {
+  color: #ffffff !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-right: 1rem;
+  transition: 0.3s ease-in;
+}
+.nav_link:hover {
+  color: white !important;
+  transition: 0.3s ease-out;
+}
+a.nav_link {
+  position: relative;
+}
+
+a.nav_link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fe493f;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+a.nav_link:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+body.offcanvas-active {
+  overflow: hidden;
+}
+
+.offcanvas-header {
+  display: none;
+}
+
+.screen-overlay {
+  width: 0%;
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition: opacity 0.2s linear, visibility 0.1s, width 1s ease-in;
+}
+.screen-overlay.show {
+  transition: opacity 0.5s ease, width 0s;
+  opacity: 1;
+  width: 100%;
+  visibility: visible;
+}
+
+/* nav end */
+@media all and (max-width: 992px) {
+  .offcanvas-header {
+    display: block;
+  }
+
+  .mobile-offcanvas {
+    visibility: hidden;
+    transform: translateX(-100%);
+    border-radius: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1200;
+    width: 80%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .mobile-offcanvas.show {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
